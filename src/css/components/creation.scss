@@ -1,0 +1,111 @@
+@import "../utils/_mixins";
+@import "../utils/_variables";
+
+article {
+  border-radius: 0.8em;
+  box-shadow: -1px 2px 18px -1px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: -1px 2px 18px -1px rgba(0, 0, 0, 0.31);
+  margin: 0px 30px 15px 0px;
+  background-color: rgb(255, 255, 255, 0.2);
+  width: calc(
+    25% - 22.5px
+  ); // 90px of margin right ( 30px * 3 articles concerned) / 4 = 22.5.
+  position: relative;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  @include tablet-only {
+    margin-right: 15px;
+    width: calc(50% - 7.5px); // Same logic
+
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+
+  @include mobile-only {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  &:hover {
+    > .img > img {
+      width: 200%;
+
+      @include largeTablet-only {
+        width: 300%;
+      }
+
+      @include tablet-only {
+        width: 200%;
+      }
+    }
+    > .body > h1 {
+      text-decoration: underline;
+    }
+
+    > .img > img {
+      width: 200%;
+
+      @include largeTablet-only {
+        width: 300%;
+      }
+
+      @include tablet-only {
+        width: 200%;
+      }
+    }
+  }
+
+  .img {
+    overflow: hidden;
+    position: relative;
+    height: 175px;
+    border-radius: 0.8em 0.8em 0 0;
+
+    img {
+      width: 120%;
+      @include largeTablet-only {
+        width: 180%;
+      }
+
+      @include tablet-only {
+        width: 120%;
+      }
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      transition-property: width;
+      transition-duration: 0.3s;
+    }
+
+    span {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #99e2d0;
+      color: #008766;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .body {
+    padding: 0px 15px 15px 15px;
+    border-radius: 0 0.8em;
+
+    h1 {
+      margin: 15px 0px 5px 0px;
+      font-size: 0.8em;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

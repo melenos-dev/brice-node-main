@@ -1,0 +1,153 @@
+@import "../utils/variables";
+
+.PortFolio {
+  overflow: hidden;
+
+  section {
+    width: 100%;
+  }
+
+  &__Menu {
+    margin-top: -30px;
+  }
+
+  &__Body {
+  }
+
+  &__Header {
+    padding: 30px 30px 46px 0px;
+    width: 607px;
+    background: url(../../img/Circles-patern-folio2.png) no-repeat top right;
+    border-radius: 0.6em;
+    position: relative;
+    transform: translatex(116px);
+
+    .comet {
+      background: url(../../img/Comet-Cut-Folio.png) no-repeat;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 31%;
+      right: 24%;
+    }
+
+    img {
+      width: auto;
+      display: block;
+      margin: 0px 0px 3px auto;
+    }
+
+    &__FollowBlock {
+      img {
+        margin: 0 !important;
+        padding-top: 2px;
+      }
+
+      > div:first-of-type {
+        margin-left: 33px;
+
+        div {
+          margin-top: auto;
+          align-self: start;
+
+          button {
+            position: relative;
+
+            &::after {
+              content: "\2713";
+              font-size: 0.6em;
+              display: block;
+              position: absolute;
+              padding: 5px 6px 2px 6px;
+              top: -4px;
+              right: 0;
+              background: #26ae33;
+              border-radius: 2em;
+            }
+          }
+        }
+
+        h1 {
+          font-size: 0.8em;
+          color: $tertiary;
+          font-family: "proxima_thin", " Source Sans Pro ", "sans-serif";
+          font-weight: bold;
+          text-align: left;
+        }
+
+        h2 {
+          font-size: 1em;
+          padding-top: 9px;
+        }
+      }
+
+      > div:last-of-type {
+        margin-left: 59px;
+        align-self: end;
+        text-align: right;
+
+        & span:first-child {
+          color: white;
+          font-size: 0.9em;
+          font-weight: bold;
+          font-family: "proxima_bold", "Source Sans Pro", "sans-serif";
+          text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        }
+
+        & span:last-child {
+          color: $tertiary;
+          text-shadow: 1px 1px 1px rgb(90, 88, 88);
+          font-size: 0.6em;
+          display: block;
+          margin-bottom: -17px;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+
+  &__Nav {
+    margin: 30px 55px 0px 95px;
+    &__Top,
+    &__Bottom {
+      height: 30px;
+      width: 30px;
+      background: url(../../img/sprites/Slider_Nav.png) no-repeat;
+      background-position-y: -562px;
+      background-position-x: -10px;
+      position: relative;
+
+      &:not(.disabled) {
+        cursor: url("../../img/cursor.png"), pointer;
+
+        &:hover {
+          background-position-y: -527px;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin: 0 auto;
+        background: url(../../img/sprites/Slider_Nav.png) no-repeat;
+        background-position-y: -448px;
+        background-position-x: -20px;
+        width: 9px;
+        height: 26px;
+        top: 35px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    &__Bottom {
+      transform: rotate(180deg);
+      margin-top: 32px;
+    }
+
+    &__Top {
+      margin-right: 40px;
+    }
+  }
+}

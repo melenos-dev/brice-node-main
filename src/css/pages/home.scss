@@ -1,0 +1,155 @@
+@import "../components/slider.scss";
+@import "../components/backdrop.scss";
+/*
+@font-face {
+  font-family: "icomoon";
+  src: url("../../../public/files/fonts/icomoon.eot");
+  src: url("../../../public/files/fonts/icomoon.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../public/files/fonts/icomoon.woff") format("woff"),
+    url("../../../public/files/fonts/IcoMoon-Free.ttf") format("truetype"),
+    url("../../../public/files/fonts/icomoon.svg#entypo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+*/
+@font-face {
+  font-family: "icomoon";
+  src: url("../../../public/files/fonts/IcoMoon-Free.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-nav.homeNav {
+  padding-right: 60px; // Slider right nav's width
+
+  @include mobile-only {
+    padding-right: 0;
+  }
+
+  @include largeScreen-only {
+    padding-right: 0;
+  }
+}
+
+.home {
+  overflow: hidden;
+
+  & > div:first-child {
+    align-self: end;
+    padding-top: 10px;
+  }
+
+  #container-logo {
+    position: relative;
+    margin-bottom: 85px;
+    ::selection {
+      background: none;
+    }
+
+    a {
+      display: inline-block;
+      #logo {
+        cursor: url("../../img/cursor.png"), pointer !important;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(50% - 12px);
+        margin: 0 auto;
+        height: 21px;
+        transition: none;
+        width: auto;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      svg {
+        overflow: visible;
+      }
+    }
+  }
+
+  p {
+    i,
+    strong {
+      font-style: normal;
+      color: white;
+      font: 400 16px "proxima_bold", "Source Sans Pro", sans-serif;
+    }
+
+    span {
+      &.flag {
+        background: url(../../img/france-flag.png) no-repeat;
+        display: inline-block;
+        margin-left: 6px;
+        width: 20px;
+        height: 12px;
+        transition: opacity 0.5s;
+
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+
+    &#networks {
+      margin-bottom: 55px;
+
+      a {
+        color: white;
+        text-align: center;
+        margin-left: 8px;
+        margin-right: 8px;
+        font-size: 20px;
+        font-family: "icomoon";
+        font-weight: 100;
+        border-radius: 15%;
+        padding: 10px;
+        border: 2px solid rgba(63, 105, 178, 0.5);
+
+        &.twitter {
+          padding: 10px 3px 10px 4px;
+
+          svg {
+            height: 25px;
+            margin-top: -2px;
+            fill: white;
+
+            &:hover,
+            path:hover {
+              cursor: url("../../img/cursor.png"), pointer !important;
+            }
+          }
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:hover {
+          color: #ffffff;
+          border-radius: 25%;
+          border-color: rgba(63, 105, 178, 1);
+          background: linear-gradient(
+            0deg,
+            rgba(63, 105, 178, 1) 0%,
+            rgba(83, 86, 165, 1) 100%
+          );
+        }
+
+        &::selection {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .file {
+    display: block;
+    white-space: nowrap;
+    width: 75px;
+    @include mobile-only {
+      display: none;
+    }
+  }
+}

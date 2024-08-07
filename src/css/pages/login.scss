@@ -1,0 +1,66 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.login {
+  text-align: center;
+  color: white;
+
+  > div {
+    min-width: 40%;
+    align-self: end;
+
+    > div {
+      margin-bottom: 100px;
+    }
+  }
+
+  h1 {
+    position: relative;
+    font-size: 1.2em;
+
+    span {
+      @include gradientBlue;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: calc(100% + 20px);
+      left: 0;
+      height: 2px;
+      width: 150%;
+      background: linear-gradient(90deg, transparent 20%, #65696b 100%);
+    }
+  }
+
+  form {
+    width: 90%;
+    @include largeTablet-only {
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+    }
+    input[type="text"],
+    input[type="password"] {
+      min-width: 220px;
+    }
+
+    label {
+      padding: 15px 0px 10px 0px;
+      font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+    }
+
+    .button {
+      margin-top: 60px;
+      margin-left: auto;
+      display: block;
+    }
+  }
+
+  #logo {
+    width: auto;
+    height: 80px;
+    margin: 0 auto 100px auto;
+    align-self: end;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../components/handicapSlider";
+
+.navbar-nav.handicapNav {
+  padding-right: 0px; // Slider right nav's width
+
+  @include largeTablet-only {
+    > li {
+      display: none;
+    }
+  }
+}
+
+.handicap {
+  overflow: hidden;
+
+  & > div:first-child {
+    align-self: end;
+  }
+
+  p {
+    i,
+    strong {
+      font-style: normal;
+      color: white;
+      font: 400 16px "proxima_bold", "Source Sans Pro", sans-serif;
+    }
+  }
+
+  .file {
+    display: block;
+    white-space: nowrap;
+    width: 75px;
+    @include tablet-only {
+      display: none;
+    }
+  }
+}

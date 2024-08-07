@@ -1,0 +1,17 @@
+@import "./components/nav.scss";
+@import "../../components/creation.scss";
+
+.admin {
+  h1 {
+    margin-bottom: 10px;
+    font-size: 1.7em;
+  }
+
+  > div {
+    justify-content: start !important;
+
+    #tabs {
+      margin: auto 0;
+    }
+  }
+}

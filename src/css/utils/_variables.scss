@@ -1,0 +1,13 @@
+$primary: #0f2f98; //Primary color
+$secondary: #1a192a; // Secondary color
+$tertiary: #999898; // Tertiary color
+
+$breakpoints: (
+  largeScreen: 1500px,
+  tablet: 992px,
+  mediumTablet: 1170px,
+  excludeTablet: 993px,
+  mobile: 768px,
+  excludeMobile: 769px,
+  largeTablet: 1300px,
+);

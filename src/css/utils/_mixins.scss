@@ -1,0 +1,109 @@
+@mixin tablet-only {
+  @media screen and (max-width: map-get($breakpoints, tablet)) {
+    @content;
+  }
+}
+
+@mixin largeTablet-only {
+  @media screen and (max-width: map-get($breakpoints, largeTablet)) {
+    @content;
+  }
+}
+
+@mixin mediumTablet-only {
+  @media screen and (max-width: map-get($breakpoints, mediumTablet)) {
+    @content;
+  }
+}
+
+@mixin exclude-tablet {
+  @media screen and (min-width: map-get($breakpoints, excludeTablet)) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin exclude-mobile {
+  @media screen and (min-width: map-get($breakpoints, excludeMobile)) {
+    @content;
+  }
+}
+
+@mixin largeScreen-only {
+  @media screen and (min-width: map-get($breakpoints, largeScreen)) {
+    @content;
+  }
+}
+
+@mixin text-shadow {
+  text-shadow: -0.5px 1px 5px rgba(255, 255, 255, 0.5);
+}
+
+@mixin text-shadow-dark {
+  text-shadow: 1px 1px 1px rgba(11, 0, 61, 0.05);
+}
+
+@mixin styled-box {
+  -moz-box-shadow: 0px 5px 15px 6px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 5px 15px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 15px 6px rgba(0, 0, 0, 0.05);
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  border-radius: 2em;
+}
+
+@mixin gradientBlue {
+  background: -webkit-linear-gradient(
+    rgba(63, 105, 178, 1) 0%,
+    rgba(83, 86, 165, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  position: relative;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  padding: 0;
+  list-style: none;
+
+  > .item {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 15em;
+    margin: -(calc($item-size / 2));
+    width: $item-size;
+    height: $item-size;
+    border: 1px solid #2f2f9b;
+    line-height: $item-size;
+    text-align: center;
+    $angle: calc(360 / $item-count);
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: rotate($rot * 1deg)
+          translate
+          calc($circle-size / 2)
+          rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+
+    span {
+      font-size: 0.8em;
+      position: absolute;
+    }
+  }
+}

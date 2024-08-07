@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@font-face {
+  font-family: "proxima_thin";
+  src: url("../../public/files/fonts/Proxima_Thin.otf");
+}
+@font-face {
+  font-family: "proxima_bold";
+  src: url("../../public/files/fonts/Proxima_Bold.otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: visible;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  body {
+    font: 400 16px "proxima_thin", "Source Sans Pro", sans-serif;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 46%,
+      rgba(81, 89, 167, 1) 100%
+    );
+
+    @include mobile-only {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 48%,
+        rgba(81, 89, 167, 1) 100%
+      );
+    }
+  }
+}
+
+#app {
+  .container-fluid {
+    --bs-gutter-x: 60px;
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.file {
+  color: white !important;
+  font-size: 12px;
+
+  &:hover > .end {
+    color: white;
+  }
+
+  .end {
+    color: $tertiary;
+    transition: all 0.5s;
+    cursor: url("../img/cursor.png"), pointer !important;
+  }
+}
+
+* {
+  cursor: none;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="textarea"],
+input[type="file"],
+.button {
+  cursor: url("../img/cursor.png"), pointer !important;
+}
+
+input,
+textarea {
+  position: relative;
+  background: none;
+  font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 12px;
+  border: none;
+  border-radius: 0.4em;
+  color: $tertiary;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  background: linear-gradient(90deg, #000000 0%, #464646 100%);
+  &:focus {
+    outline: 2px solid #4c4f97;
+  }
+}
+
+textarea {
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 300px;
+}
+
+input[type="file"] {
+  width: 215px;
+  margin: 20px 0;
+}
+
+table {
+  margin-top: 20px;
+  tr {
+    background: $secondary;
+
+    td,
+    th {
+      border: 1px solid black;
+      color: white;
+    }
+    th {
+      padding: 15px;
+    }
+    td {
+      padding: 15px;
+
+      &.delete {
+        color: #dd4343;
+        text-shadow: 1px 1px 1px #222121;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+.err {
+  color: #dd4343;
+  text-shadow: 1px 1px 1px #222121;
+  font-size: 0.8em;
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+}
+
+.success {
+  color: #50dd43;
+  text-shadow: 1px 1px 1px #222121;
+  font-size: 1.2em;
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+}
+
+.ico {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../img/sprites/txt-icons.png") no-repeat -10px -10px;
+  margin: 0px 5px;
+  vertical-align: top;
+  transition: none;
+
+  &.psd:hover {
+    background-position-x: -52px;
+  }
+
+  &.handicap {
+    background-position: -4px -49px;
+    width: 36px;
+    height: 36px;
+
+    &:hover {
+      background-position-x: -50px;
+    }
+  }
+}
+
+.newcursor {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #ffffff !important;
+  position: fixed;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  & .circle {
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+
+  &.active {
+    opacity: 0.9;
+
+    & > .circle {
+      opacity: 1;
+      height: 23px;
+      width: 23px;
+      border: 2px solid #ffffff !important;
+      border-radius: 2em;
+      transform: translate(-6.5px, -6.5px);
+    }
+  }
+
+  &.black {
+    background: black !important;
+
+    > .circle {
+      border: 2px solid black !important;
+    }
+  }
+
+  @media (hover: none) {
+    display: none !important;
+  }
+}
+
+main {
+  flex-flow: row nowrap;
+  padding: 0 !important;
+  position: relative;
+  overflow: hidden;
+
+  #comet {
+    background: url(../img/Comet-Cut.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .page:not(:first-child) {
+    margin-left: -100%;
+    font-size: 1.1em;
+    z-index: 1;
+  }
+
+  .page:first-child {
+    position: relative;
+    .customCircle {
+      background: url(../img/Custom-Circles-Cut.png) no-repeat 0% 100% fixed;
+      @include mobile-only {
+        background-size: 35%;
+      }
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .page {
+    flex: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 90px 40px 0px 40px !important;
+    @include mobile-only {
+      padding: 90px 20px 0px 20px !important;
+    }
+  }
+}
+
+p {
+  color: $tertiary;
+  line-height: 30px;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s ease;
+  font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+
+  &:hover {
+    color: white;
+  }
+
+  &.highlight:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+::selection {
+  background-color: #4861ac;
+  color: #ffffff;
+}
+
+b,
+strong {
+  font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+  font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 48%,
+    rgba(81, 89, 167, 1) 100%
+  );
+
+  &.black {
+    background-color: black;
+  }
+
+  &.blue {
+    background: linear-gradient(
+      -90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 46%,
+      rgba(81, 89, 167, 1) 100%
+    );
+  }
+}

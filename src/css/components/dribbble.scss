@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "digital7";
+  src: url("../../../public/files/fonts/digital-7.ttf");
+}
+
+.dribbble {
+  padding-top: 60px;
+  max-width: 262px;
+  margin: 0 auto;
+  position: relative;
+  height: 0;
+
+  > span {
+    color: #b4b4b4;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__box {
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background: linear-gradient(90deg, rgb(64, 104, 177), rgb(83, 86, 165))
+      border-box;
+    margin-top: 25px;
+    width: inherit;
+    position: relative;
+    overflow: visible;
+
+    > span {
+      position: absolute;
+      right: -87px;
+      top: 22px;
+      background-color: #e94782;
+      color: white;
+      font-family: "icomoon";
+      padding: 5px;
+      border-radius: 4em;
+      border: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background: url("../../img/Arrow.png") no-repeat;
+        width: 63px;
+        height: 33px;
+        top: -43px;
+        right: 8px;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 33px;
+      height: 32px;
+      background: url("../../img/Heart-Corner.png") no-repeat;
+      top: -8px;
+      left: -8px;
+    }
+
+    &__counter {
+      background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.9) 50%,
+          rgba(81, 89, 167, 0.9) 100%
+        ),
+        url("../../img/Circles-patern.png") 3px -39px;
+      border-radius: 10px;
+      padding: 25px 0 43px 0;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          rgba(63, 105, 178, 1) 0%,
+          rgba(83, 86, 165, 1) 100%
+        );
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      > div {
+        font-family: "digital7";
+        font-size: 3em;
+        color: white;
+        letter-spacing: 5px;
+        display: block;
+        padding-left: 6px;
+
+        > div {
+          overflow: hidden;
+          height: 54px;
+
+          div {
+            height: 54px;
+          }
+
+          &.space {
+            margin-right: 10px;
+          }
+        }
+
+        ~ a {
+          color: black;
+          border-radius: 2em;
+          background-color: white;
+          padding: 14px 26px;
+          display: block;
+          max-width: 140px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          bottom: -27px;
+
+          &:hover {
+            background-color: #ea4c89;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

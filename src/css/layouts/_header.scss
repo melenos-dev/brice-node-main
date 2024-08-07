@@ -1,0 +1,157 @@
+header:not(section header) {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .navbar {
+    position: relative;
+    padding: var(--bs-gutter-x) !important;
+    padding-bottom: 0 !important;
+
+    &__item {
+      margin-right: 40px;
+      white-space: nowrap;
+      position: relative;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      & a {
+        color: $tertiary;
+        position: relative;
+        display: block;
+        height: 30px;
+        font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+
+        &:hover,
+        &.active {
+          color: white;
+        }
+      }
+
+      &.portfolio {
+        margin-right: 57px;
+
+        a {
+          &:hover::after {
+            border-color: #4861ac;
+            width: 24%;
+          }
+          &::after {
+            position: absolute;
+            border-bottom: 2px solid $tertiary;
+            top: 85%;
+            left: 0;
+            width: 14%;
+            content: "";
+            height: 4px;
+            transform: scaleX(1);
+          }
+        }
+
+        span {
+          position: absolute;
+          display: block;
+          padding: 1px 5px 0px 5px;
+          top: -12px;
+          right: -26px;
+          background: linear-gradient(
+            45deg,
+            rgba(63, 105, 178, 1) 0%,
+            rgba(83, 86, 165, 1) 100%
+          );
+          color: white;
+          font-size: 0.8em;
+          border-radius: 0.5em;
+          font-family: "proxima_thin", "Source Sans Pro", sans-serif;
+        }
+      }
+    }
+
+    .navbar-nav {
+      > li {
+        @include mediumTablet-only {
+          display: none;
+        }
+        margin-right: 0;
+        width: 0px;
+      }
+
+      &:hover div a:not(:hover) {
+        color: $tertiary !important;
+
+        &::after {
+          border-color: $tertiary;
+        }
+      }
+    }
+
+    div {
+      li {
+        &:first-child {
+          margin-left: 40px;
+        }
+        a::after {
+          position: absolute;
+          border-bottom: 2px solid #4861ac;
+          top: 85%;
+          left: 0;
+          width: 24%;
+          content: "";
+          height: 4px;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.5s, border-color 0.5s, width 0.5s;
+        }
+
+        a.active::after,
+        a:hover::after {
+          transform: scaleX(1);
+        }
+      }
+
+      button {
+        background: url(../img/sprites/Home.png) no-repeat;
+        height: 30px;
+        width: 30px;
+        background-position: -10px -10px;
+        display: block;
+        border: none;
+        transition: none;
+        box-shadow: none;
+        margin-right: 0;
+
+        &:hover {
+          background-position: -50px -10px;
+        }
+      }
+    }
+  }
+
+  & .backdrop {
+    height: 100vh;
+    justify-content: start;
+    align-items: start;
+
+    .popup {
+      margin: 0;
+      width: 100%;
+
+      #collapsedMenu {
+        margin-top: 40px;
+
+        & > div:first-of-type {
+          flex-direction: column;
+
+          li {
+            margin: 0;
+            align-self: start;
+            margin-bottom: 38px;
+          }
+        }
+      }
+    }
+  }
+}

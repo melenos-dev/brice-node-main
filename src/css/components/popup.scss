@@ -1,0 +1,53 @@
+.popup {
+  //width: clamp(50%, 700px, 90%);
+  //height: min(50%, 300px);
+  margin: auto;
+
+  &__close {
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    padding: 0;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 50%;
+    z-index: 10;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 15%;
+      left: calc(50% - 0.0625em);
+      width: 0.125em;
+      height: 70%;
+      border-radius: 0.125em;
+      transform: rotate(45deg);
+      background: white;
+      content: "";
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.subMenu .popup {
+  &__close {
+    top: 20px;
+    right: 40px;
+  }
+
+  .navbar {
+    height: 100vh;
+    align-items: start;
+
+    #collapsedMenu {
+      height: calc(100% - 70px);
+      padding-bottom: 40px;
+      overflow-x: hidden;
+    }
+  }
+}

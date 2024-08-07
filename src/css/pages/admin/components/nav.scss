@@ -1,0 +1,57 @@
+@import "../../../utils/variables";
+
+.admin .navbar {
+  margin: 40px 0px 0px 0px;
+
+  &__item {
+    margin-right: 20px;
+    white-space: nowrap;
+    position: relative;
+
+    a {
+      color: $tertiary;
+      position: relative;
+      display: block;
+      font-family: "proxima_bold", "Source Sans Pro", sans-serif;
+      font-size: 0.8em;
+      padding-bottom: 6px;
+
+      &:hover,
+      &.active {
+        color: white;
+      }
+
+      &::after {
+        position: absolute;
+        border-bottom: 1px solid #4861ac;
+        top: 85%;
+        left: 0;
+        width: 24%;
+        content: "";
+        height: 4px;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s, border-color 0.5s, width 0.5s;
+      }
+
+      &.active::after,
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .navbar-nav {
+    &:hover a:not(:hover) {
+      color: $tertiary !important;
+
+      &::after {
+        border-color: $tertiary;
+      }
+    }
+  }
+}

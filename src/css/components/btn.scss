@@ -1,0 +1,253 @@
+a {
+  &.button {
+    color: #ffffff;
+    text-align: center;
+    transition: none;
+    display: inline-block;
+    font-size: 0.8em;
+    padding: 12px 30px;
+    border-radius: 2em;
+    text-shadow: 1px 1px 1px rgb(97, 97, 97);
+
+    &__blue {
+      background: linear-gradient(#3b67b2 0%, #504fad 100%);
+
+      &:hover {
+        box-shadow: 0px 5px 13px 0px rgba(59, 103, 178, 0.42);
+      }
+    }
+
+    &__pink {
+      margin-right: 50px;
+      background: linear-gradient(#fc5293 0%, #b73b6b 100%);
+
+      &:hover {
+        box-shadow: 0px 5px 13px 0px rgba(218, 71, 128, 0.42);
+      }
+    }
+
+    &__green {
+      margin-right: 50px;
+      background: linear-gradient(90deg, #6a8b3b 0%, #a7bc65 100%);
+
+      &:hover {
+        box-shadow: 0px 5px 13px 0px rgba(106, 139, 59, 0.42);
+      }
+    }
+
+    &__quote {
+      position: relative;
+      margin-top: 70px;
+
+      &:not(:hover)::before {
+        border-radius: 2em; /*1*/
+        border: 2px solid transparent; /*2*/
+        background: linear-gradient(45deg, #ca0045, #5058a5) border-box;
+        -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor; /*5'*/
+        mask-composite: exclude; /*5*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+      }
+
+      &:hover {
+        background: linear-gradient(45deg, #ca0045, #5058a5) border-box;
+      }
+
+      span {
+        color: $tertiary;
+      }
+    }
+
+    &__BO {
+      position: relative;
+      padding: 12px 50px 12px 15px;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 1.4em;
+        background: linear-gradient(
+            90deg,
+            #ffffff 0%,
+            transparent 70%,
+            transparent 100%
+          )
+          border-box;
+        font-size: 1em;
+        -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor; /*5'*/
+        mask-composite: exclude; /*5*/
+        border: 2px solid transparent; /*2*/
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        background: url("../img/bo_ticks.png") no-repeat center center,
+          linear-gradient(90deg, #3b67b2 0%, #504fad 100%);
+        border-radius: 2em;
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    &__admin {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      z-index: 9999;
+      border-radius: 0.6em;
+      background: url("../img/Sb_.png") no-repeat,
+        linear-gradient(
+          90deg,
+          #3f69b2 0%,
+          #5356a5 50%,
+          #5356a5 60%,
+          transparent 100%
+        );
+      background-position: left 11px top 50%, top left;
+      padding: 0px;
+      height: 29px;
+      width: 60px;
+
+      &:hover {
+        background: url("../img/Sb_.png") no-repeat 11px 50%;
+
+        &::before {
+          border-radius: 0.6em;
+          border: 2px solid transparent; /*2*/
+          background: linear-gradient(
+              100deg,
+              #3f69b2 0%,
+              transparent 90%,
+              transparent 100%
+            )
+            border-box;
+          -webkit-mask: /*4*/ linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor; /*5'*/
+          mask-composite: exclude; /*5*/
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+button.button,
+input[type="submit"].button {
+  border-radius: 1.3em;
+  text-shadow: 1px 1px 1px rgb(97, 97, 97);
+  color: white;
+  padding-left: 15px;
+
+  &__delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    overflow: hidden;
+    border: none;
+    padding: 0.7em;
+    width: auto;
+    border-radius: 50%;
+    z-index: 99999;
+    background: rgb(255, 255, 255, 0.6);
+    transition: all 0.3s;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      width: 0.125em;
+      height: 60%;
+      border-radius: 0.125em;
+      transform: rotate(45deg);
+      background: rgb(228, 20, 20);
+      content: "";
+    }
+
+    &:hover {
+      background: rgb(255, 255, 255, 1);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__filter {
+    padding: 5px 15px;
+    background: none;
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      background: linear-gradient(
+        rgb(59, 103, 178, 0.6) 0%,
+        rgb(80, 79, 173, 0.6) 100%
+      );
+    }
+    &.selected {
+      background: linear-gradient(#3b67b2 0%, #504fad 100%);
+    }
+  }
+
+  &__RedToBlue {
+    background: linear-gradient(90deg, #ca0045 0%, #5159a7 100%);
+
+    &:hover {
+      box-shadow: 0px 5px 13px 0px rgba(218, 71, 128, 0.42);
+    }
+  }
+
+  &__Blue {
+    border-radius: 0.4em;
+    background: url("../img/submit_ticks.png") no-repeat,
+      linear-gradient(90deg, #121424 0%, #24284c 100%);
+    background-position: right 15px top calc(50% + 1px), top left;
+    padding-right: 50px;
+    &:hover {
+      box-shadow: 0px 5px 13px 0px rgb(36, 40, 76, 0.4);
+    }
+  }
+
+  &__close {
+    margin-top: 30px;
+    position: relative;
+    width: 185px;
+    height: 55px;
+    padding: 0;
+    background: url(../img/sprites/popup-buttons.png) no-repeat 0px -55px;
+    text-indent: -9999px;
+
+    &:hover {
+      background-position: 0px 0px;
+    }
+  }
+}

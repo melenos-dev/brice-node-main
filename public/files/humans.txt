@@ -1,0 +1,52 @@
+
+
+
+
+                   /  GEEKS IN FREELANCE  /
+
+
+
+	# ROBOTS N°1 -> Senior Designer UIX, Icons & Print
+
+	.Brice Séraphin
+	Contact: hello@eseraphinbrice.fr
+	WebSite: seraphinbrice.fr
+	From: de Normandie, France
+
+
+	Social Media Account:
+	- Twitter: @seraphinbrice
+	- Dribbble: www.dribbble.com/briceseraphin
+	- Facebook: www.facebook.com/seraphinbrice.fr
+	- Linkedin: www.linkedin.com/in/seraphinbrice
+
+
++------------------------------------------------------------+
+
+
+	# ROBOTS N°2 -> Full-Stack Developer
+
+	.Yann Ducret
+	Contact: yanndweb@gmail.com
+	From: Bretagne, France
+
+	Social Media Account:
+	- https://www.linkedin.com/in/melenos-dev/
+	- https://www.malt.fr/profile/yannducret
+	+------------------------------------------------------------+
+
+
+
+	Last update: 01/11/23
+	Version: 1.0
+	Language: Français (bientôt une traduction en Anglais)
+	Technoglogies utilisées -> React + Node Js & SaaS.
+    VPS by Hostinger -> CentOS 7 64bit
+
+
+
+
+
+Licence: All Rights Reserved 
+						
+𝘚𝘦́𝘳𝘢𝘱𝘩𝘪𝘯 𝘉𝘳𝘪𝘤𝘦. 𝗦𝗯_ 
